@@ -1,9 +1,10 @@
+import redis
 
 """
 Upload
 """
 
-UPLOADS_DEFAULT_DEST = "/Users/manel/Sites/virtualenvs/imgall/uploads"
+UPLOADS_DEFAULT_DEST = "/Users/manel/Sites/virtualenvs/texgal/texgal/uploads"
 #UPLOADS_DEFAULT_URL = ""
 
 

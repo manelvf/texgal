@@ -1,11 +1,10 @@
 import Image
 import os
-import redis
 import logging
 import settings
 
 from flask import Flask, url_for
-from flaskext.uploads import UploadSet, IMAGES
+from flaskext.uploads import UploadSet, IMAGES, configure_uploads
 
 from settings import r, UPLOADS_DEFAULT_DEST
 
