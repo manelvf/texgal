@@ -1,0 +1,47 @@
+<html>
+  <script src="/static/microajax.minified.js"></script>
+  <body>
+    <center>
+
+    <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+        <input type=file name=texture >
+        <input type=submit value="Upload">
+    </form>
+
+      <img src="#" width="800" height="800" id="img-frame" />
+      <br />
+      <a href="#" id="backward" onclick="javascript:loadImage(-1);" > << </a>
+      <a href="#" id="forward" onclick="javascript:loadImage(1);" > >> </a>
+    </center>
+
+    
+
+    <script>
+
+    var img = document.getElementById("img-frame");
+    var forward = document.getElementById("forward");
+    var backward= document.getElementById("backward");
+
+    var member_list=[{{ member_list|join(',') }}];
+    cur_image = 0;
+
+    function loadImage(val) {
+        cur_image += val;
+        cur_image %= member_list.length;
+        if (cur_image < 0) {
+            cur_image = member_list.length + cur_image;
+        }
+
+        /*
+        microAjax("/img/" + member_list[window.cur_image], function(res) {
+            console.log(res);
+        });
+        */
+        imgurl="/img/" + member_list[window.cur_image];
+        img.src = imgurl;
+    }
+
+    loadImage(0);
+    </script>
+  </body>
+</html>

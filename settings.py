@@ -5,6 +5,7 @@ Upload
 """
 
 UPLOADS_DEFAULT_DEST = "/Users/manel/Sites/virtualenvs/texgal/texgal/uploads"
+UPLOADED_DEFAULT_DEST = "/Users/manel/Sites/virtualenvs/texgal/texgal/uploads"
 #UPLOADS_DEFAULT_URL = ""
 
 
